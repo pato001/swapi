@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "start": "nx serve swapi",
     "lint": "nx run-many --target=lint --all=true",
     "prettier": "nx format:write",
     "format": "npm run prettier && npm run lint",
@@ -30,6 +31,8 @@
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@eslint/eslintrc": "^2.1.1",
+    "@eslint/js": "~8.46.0",
     "@nx/cypress": "17.0.1",
     "@nx/devkit": "17.0.1",
     "@nx/eslint": "17.0.1",
