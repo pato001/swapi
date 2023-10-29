@@ -7,7 +7,8 @@
     "lint": "nx run-many --target=lint --all=true",
     "prettier": "nx format:write",
     "format": "npm run prettier && npm run lint",
-    "e2e": "nx run swapi-e2e:e2e"
+    "e2e": "nx run swapi-e2e:e2e",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +38,7 @@
     "@nx/devkit": "17.0.1",
     "@nx/eslint": "17.0.1",
     "@nx/eslint-plugin": "17.0.1",
+    "@nx/jest": "17.0.1",
     "@nx/js": "17.0.1",
     "@nx/playwright": "17.0.1",
     "@nx/react": "17.0.1",
@@ -47,6 +49,7 @@
     "@swc/cli": "~0.1.62",
     "@swc/core": "~1.3.85",
     "@testing-library/react": "14.0.0",
+    "@types/jest": "^29.4.0",
     "@types/node": "18.14.2",
     "@types/react": "18.2.24",
     "@types/react-dom": "18.2.9",
@@ -63,13 +66,26 @@
     "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "husky": ">=6",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
     "jsdom": "~22.1.0",
+    "lint-staged": ">=10",
     "nx": "17.0.1",
     "postcss": "8.4.21",
     "prettier": "^2.6.2",
     "tailwindcss": "3.2.7",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
     "typescript": "~5.1.3",
     "vite": "~4.3.9",
     "vitest": "~0.32.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "nx format:write",
+      "nx run-many --target=lint --all=true"
+    ],
+    "*.{json,css,scss}": "nx format:write"
   }
 }
