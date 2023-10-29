@@ -73,7 +73,7 @@ export function DetailedView({ sectionKey }: DetailedViewProps) {
                 </Typography>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-x-6 lg:gap-x-8'>
                   {entries?.map(
-                    ([key, value]: any) =>
+                    ([key, value]) =>
                       ![
                         'name',
                         'title',
@@ -93,10 +93,12 @@ export function DetailedView({ sectionKey }: DetailedViewProps) {
                         'planets'
                       ].includes(key) && (
                         <p key={key} className='mb-0'>
-                          <strong>
-                            {key?.replaceAll('_', ' ').toLocaleUpperCase()}
-                          </strong>
-                          : {value}
+                          <>
+                            <strong>
+                              {key?.replace(/_/, ' ').toLocaleUpperCase()}
+                            </strong>
+                            : {value}
+                          </>
                         </p>
                       )
                   )}

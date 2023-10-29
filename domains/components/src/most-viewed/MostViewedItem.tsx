@@ -33,7 +33,7 @@ export const MostViewedItem = ({
       <Loader isLoading={isLoading} isError={isError} hasData={!!info}>
         {details && info && (
           <ProfileCard
-            name={info[details.name]}
+            name={info[details.name] as string}
             detail={`${value} views`}
             link={`/${sectionKey}${info?.url?.split(sectionKey)?.[1]}`}
             img={`https://starwars-visualguide.com/assets/img/${

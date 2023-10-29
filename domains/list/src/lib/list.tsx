@@ -27,7 +27,7 @@ export function List({ sectionKey, domain, details }: ListTypes) {
 
   // FETCH DATA
   const { data, isError, isLoading } = useGetList(sectionKey, search)
-  const hasData = data?.data?.count > 0
+  const hasData = data?.data?.count
 
   // HOOKS
   const location = useLocation()
@@ -83,7 +83,7 @@ export function List({ sectionKey, domain, details }: ListTypes) {
           </IconButton>
         </div>
       </div>
-      <Loader isLoading={isLoading} isError={isError} hasData={hasData}>
+      <Loader isLoading={isLoading} isError={isError} hasData={!!hasData}>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8'>
           {data?.data?.results.map((item: any, i: number) => (
             <ProfileCard
