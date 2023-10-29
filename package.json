@@ -25,6 +25,7 @@
     "react-loader-spinner": "^5.4.5",
     "react-particles": "^2.12.2",
     "react-router-dom": "^6.17.0",
+    "semantic-release": "^22.0.5",
     "tslib": "^2.3.0",
     "tsparticles-preset-stars": "^2.12.0",
     "unplugin-fonts": "^1.0.3"
@@ -45,6 +46,8 @@
     "@nx/vite": "17.0.1",
     "@nx/workspace": "17.0.1",
     "@playwright/test": "^1.36.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@swc-node/register": "~1.6.7",
     "@swc/cli": "~0.1.62",
     "@swc/core": "~1.3.85",
@@ -87,5 +90,32 @@
       "nx run-many --target=lint --all=true"
     ],
     "*.{json,css,scss}": "nx format:write"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json",
+            "CHANGELOG.md"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
   }
 }

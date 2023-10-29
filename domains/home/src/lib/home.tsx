@@ -5,7 +5,6 @@ export function Home() {
     <>
       <Carousel />
       <MostViewed />
-      <div></div>
     </>
   )
 }
