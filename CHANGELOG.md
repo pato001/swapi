@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/pato001/swapi/compare/v1.0.0...v1.0.1) (2023-10-29)
+
+
+### Bug Fixes
+
+* **types:** 🏷️ Improved types ([2ef6df5](https://github.com/pato001/swapi/commit/2ef6df57acb6cf464d24920d03c3fb3b8244f81c))
+
 # 1.0.0 (2023-10-29)
 
 
