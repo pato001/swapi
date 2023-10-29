@@ -11,7 +11,7 @@ const useGetDetails = (section: string, id: string) => {
     ['details', section, id],
     () => axios.getDetails(section, id),
     {
-      enabled: true
+      enabled: !!id
     }
   )
 }

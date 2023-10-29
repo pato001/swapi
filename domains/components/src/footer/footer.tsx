@@ -11,7 +11,7 @@ const SimpleFooter = () => {
       <Typography color='white' className='font-normal'>
         &copy; 2023 Madeleine Solutions
       </Typography>
-      <ul className='flex flex-wrap items-center gap-y-2 gap-x-8'>
+      <ul className='flex flex-wrap items-center justify-center gap-y-2 gap-x-8'>
         {domainsData.map(({ linkUrl, domain }) => (
           <li key={domain}>
             <Link

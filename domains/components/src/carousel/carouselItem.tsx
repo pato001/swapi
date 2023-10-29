@@ -30,17 +30,21 @@ export const CarouselItem = ({
         className='w-full object-cover aspect-video'
       />
       <div className='absolute inset-0 grid h-full w-full items-end bg-[#101010]/75'>
-        <div className='m-auto w-2/4'>
+        <div className='m-auto w-3/4 lg:w-2/4'>
           <Typography
             variant='h1'
             color='white'
-            className='mb-4 text-3xl md:text-4xl lg:text-5xl'
+            className='mb-4 text-md text-xl md:text-3xl lg:text-5xl'
           >
             {title}
           </Typography>
-          <Typography variant='lead' color='white' className='mb-12'>
+          <Typography
+            variant='lead'
+            color='white'
+            className='hidden md:block mb-12'
+          >
             <span>{description1}</span>
-            <span className='hidden md:flex'>{description2}</span>
+            <span className='hidden xl:block'>{description2}</span>
           </Typography>
           <div className='flex gap-2'>
             <Link to={linkUrl}>

@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { defineConfig } from 'vite'
+import { defineConfig, searchForWorkspaceRoot } from 'vite'
 import react from '@vitejs/plugin-react'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import FontsPlugin from 'unplugin-fonts/vite'
@@ -8,7 +8,15 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/swapi',
   server: {
     port: 4200,
-    host: 'localhost'
+    host: 'localhost',
+    fs: {
+      allow: [
+        // search up for workspace root
+        searchForWorkspaceRoot(process.cwd()),
+        // your custom rules
+        '/domains/components/src/workers/worker.js'
+      ]
+    }
   },
 
   preview: {
@@ -90,9 +98,9 @@ export default defineConfig({
   ],
 
   // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  worker: {
+    plugins: [nxViteTsPaths()]
+  },
 
   test: {
     globals: true,
