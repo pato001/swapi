@@ -71,6 +71,7 @@ export function List({ sectionKey, domain, details }: ListTypes) {
             }}
             color='white'
             crossOrigin={undefined}
+            data-testid='domain-search-input'
           />
           <IconButton
             size='sm'
@@ -78,6 +79,7 @@ export function List({ sectionKey, domain, details }: ListTypes) {
             disabled={!(inputValue.length > 3)}
             className='!absolute right-1 top-1 rounded'
             onClick={triggerSearch}
+            data-testid='domain-search-trigger'
           >
             <i className='fa fa-search text-lg text-white' />
           </IconButton>

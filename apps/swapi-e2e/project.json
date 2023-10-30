@@ -2,6 +2,7 @@
   "name": "swapi-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/swapi-e2e/src",
+  "browserName": "chromium",
   "targets": {
     "e2e": {
       "executor": "@nx/playwright:playwright",

@@ -22,7 +22,7 @@ const ProfileCard = ({ name, detail, link, img }: CardProps) => {
   // METHOD: Set placeholder image if custom image does not load properly
   const handleImageError = (event: SyntheticEvent<HTMLImageElement>) => {
     event.currentTarget.src =
-      'https://starwars-visualguide.com//assets/img/big-placeholder.jpg'
+      'https://starwars-visualguide.com/assets/img/big-placeholder.jpg'
   }
 
   return (
@@ -36,7 +36,12 @@ const ProfileCard = ({ name, detail, link, img }: CardProps) => {
         />
       </CardHeader>
       <CardBody className='text-center flex-grow'>
-        <Typography variant='h4' color='blue-gray' className='mb-2'>
+        <Typography
+          variant='h4'
+          color='blue-gray'
+          className='mb-2'
+          title='profile-card-name'
+        >
           {name}
         </Typography>
         <Typography color='blue-gray' className='font-medium' textGradient>

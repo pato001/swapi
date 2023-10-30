@@ -8,7 +8,11 @@ interface TitleProps {
 
 const Title = ({ title }: TitleProps) => {
   return (
-    <Typography variant='h3' className='star-wars-font text-[#FFC107] pb-4'>
+    <Typography
+      variant='h3'
+      className='star-wars-font text-[#FFC107] pb-4'
+      data-testid='domain-title'
+    >
       {title}
     </Typography>
   )

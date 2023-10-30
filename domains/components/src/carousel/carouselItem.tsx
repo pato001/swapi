@@ -35,6 +35,7 @@ export const CarouselItem = ({
             variant='h1'
             color='white'
             className='mb-4 text-md text-xl md:text-3xl lg:text-5xl'
+            data-testid={`hero-title-${domain}`}
           >
             {title}
           </Typography>
@@ -43,12 +44,23 @@ export const CarouselItem = ({
             color='white'
             className='hidden md:block mb-12'
           >
-            <span>{description1}</span>
-            <span className='hidden xl:block'>{description2}</span>
+            <span data-testid={`hero-description1-${domain}`}>
+              {description1}
+            </span>
+            <span
+              className='hidden xl:block'
+              data-testid={`hero-description2-${domain}`}
+            >
+              {description2}
+            </span>
           </Typography>
           <div className='flex gap-2'>
             <Link to={linkUrl}>
-              <Button size='lg' color='white'>
+              <Button
+                size='lg'
+                color='white'
+                data-testid={`hero-link-${domain}`}
+              >
                 {linkText}
               </Button>
             </Link>
