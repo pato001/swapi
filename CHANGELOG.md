@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/pato001/swapi/compare/v1.0.1...v1.1.0) (2023-10-29)
+
+
+### Features
+
+* **worker:** :sparkles: Add web worker for calculating the most viewed item ([da62d94](https://github.com/pato001/swapi/commit/da62d94f26d7c8283840e6a88fe63096f977b30a))
+
 ## [1.0.1](https://github.com/pato001/swapi/compare/v1.0.0...v1.0.1) (2023-10-29)
 
 
