@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/pato001/swapi/compare/v1.1.0...v1.2.0) (2023-10-30)
+
+
+### Features
+
+* **e2e:** ✅ Added e2e tests with playwright ([eb45325](https://github.com/pato001/swapi/commit/eb45325f3d1a38d8a2fe915d192bace7215cf0cc))
+
 # [1.1.0](https://github.com/pato001/swapi/compare/v1.0.1...v1.1.0) (2023-10-29)
 
 
